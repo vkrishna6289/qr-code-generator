@@ -1,0 +1,20 @@
+import qrcode
+
+website_url = "https://www.google.com/search?q=how+to+open+github+co+pilot+in+vs+code&sca_esv=bbf5afcc60017a66&sxsrf=AE3TifO_q43UtnEU_HIzd21CRpjhNl8KXg%3A1758939362569&ei=4kjXaMXFIsbMseMP-YrLiAg&oq=how+to+open+github+co+&gs_lp=Egxnd3Mtd2l6LXNlcnAiFmhvdyB0byBvcGVuIGdpdGh1YiBjbyAqAggAMgUQABiABDIGEAAYFhgeMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCxAAGIAEGIYDGIoFMgsQABiABBiGAxiKBTILEAAYgAQYhgMYigUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRI7l9QiQxYhk9wBXgBkAEAmAHDAaABsB-qAQQwLjI2uAEDyAEA-AEBmAIfoALWIKgCEMICBxAjGCcY6gLCAg0QLhjRAxjHARgnGOoCwgINECMY8AUYJxjJAhjqAsICFBAAGIAEGJECGLQCGIoFGOoC2AEBwgIKECMYgAQYJxiKBcICChAAGIAEGEMYigXCAgsQABiABBixAxiDAcICCxAuGIAEGLEDGIMBwgIOEC4YgAQYsQMYgwEYigXCAgsQLhiABBixAxjUAsICCBAAGIAEGLEDwgILEAAYgAQYkQIYigXCAgcQABiABBgKwgIHEAAYgAQYDZgDDPEF-wN0qDbElOO6BgYIARABGAGSBwY1LjI1LjGgB__KAbIHBjAuMjUuMbgHuCDCBwgwLjUuMjQuMsgHfA&sclient=gws-wiz-serp"
+
+
+qr = qrcode.QRCode(
+    version=1,
+    error_correction=qrcode.constants.ERROR_CORRECT_H,
+    box_size=10,
+    border=4,
+)
+
+qr.add_data(website_url)
+qr.make(fit=True)
+
+
+img = qr.make_image(fill_color="black", back_color="white")
+
+
+img.show()
